@@ -4,9 +4,49 @@
     <!-- 1. Load platform support before any code that touches the DOM. -->
     <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
     <!-- 2. Load the component using an HTML Import -->
+    <link rel="import" href="bower_components/core-elements/core-elements.html">
+    <link rel="import" href="bower_components/paper-elements/paper-elements.html">
+    <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+    <link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
     <link rel="import" href="elements/au-polymer-scratchpad.html">
   </head>
-  <body>
-    <au-polymer-scratchpad> </au-polymer-scratchpad>
-  </body>
+  <body unresolved fullbleed>
+<core-scaffold id="scaffold">
+<nav>
+  <core-toolbar><span>Au-Polymer</span></core-toolbar>
+  <core-menu selected="0">
+    <paper-item noink>
+      <core-icon icon="label-outline"></core-icon>
+      <a href="#one">ScratchPad</a>
+    </paper-item>
+    <paper-item noink>
+      <core-icon icon="label-outline"></core-icon>
+      <a href="#two">Resources</a>
+    </paper-item>
+    ...
+  </core-menu>
+</nav>
+
+<core-toolbar tool flex> 
+ <div flex> Au-Polymer </div>
+ <core-icon-button icon="refresh"> </core-icon-button>
+ <core-icon-button icon="add"> </core-icon-button>
+</core-toolbar>
+
+<div layout horizontal center-center fit> 
+<core-animated-pages selected="0" transitions="slide-from-right">
+  <section layout vertical center-center>
+    <div>  <au-polymer-scratchpad> </au-polymer-scratchpad>  </div>
+  </section>
+  <section layout vertical center-center>
+     <div> Resources </div>
+  </section>
+</core-animated-pages>
+
+</div>
+
+</core-scaffold>
+
+</body>
+
 </html>
