@@ -1,0 +1,9 @@
+bower_components
+node_modules
+*.swp
+*.pyc
+*.kate
+venv
+eggs
+parts
+
