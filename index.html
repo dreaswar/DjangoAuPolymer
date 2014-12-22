@@ -9,21 +9,33 @@
     <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
     <link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
     <link rel="import" href="elements/au-polymer-scratchpad.html">
-  </head>
-  <body unresolved fullbleed>
+</head>
+
+<body unresolved fullbleed>
+
 <core-scaffold id="scaffold">
+
 <nav>
+
   <core-toolbar><span>Au-Polymer</span></core-toolbar>
+
   <core-menu selected="0">
+
     <paper-item noink>
       <core-icon icon="label-outline"></core-icon>
-      <a href="#one">ScratchPad</a>
+      <a href="#one">Au-Polymer-ScratchPad</a>
     </paper-item>
+
     <paper-item noink>
       <core-icon icon="label-outline"></core-icon>
-      <a href="#two">Resources</a>
+      <a href="#two">Au-Polymer-RefreshablePane</a>
     </paper-item>
-    ...
+
+    <paper-item noink>
+      <core-icon icon="label-outline"></core-icon>
+      <a href="#three">Au-Polymer-SimpleNotes</a>
+    </paper-item>   
+
   </core-menu>
 </nav>
 
@@ -39,10 +51,12 @@
     <div>  <au-polymer-scratchpad> </au-polymer-scratchpad>  </div>
   </section>
   <section layout vertical center-center>
-     <div> Resources </div>
+     <div> Au-Polymer-RefreshablePane </div>
+  </section>
+  <section layout vertical center-center>
+     <div> Au-Polymer-SimpleNotes </div>
   </section>
 </core-animated-pages>
-
 </div>
 
 </core-scaffold>

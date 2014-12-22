@@ -1,5 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="../bower_components/core-elements/core-elements.html">
+<link rel="import" href="../bower_component/core-drag-drop/core-drag-drop.html">
 
 <polymer-element name="au-polymer-scratchpad">
   <template>
@@ -55,30 +57,62 @@
        font-family:  helvetica;
       }
     </style>
-    <div id="scratchPadContainer">
-      <div> 
-  	<div id="titleBlock"> 
-		<b>{{scratchPadTitle}}</b>
-	</div>
-	<div id="scratchPadContent"> 
+
+    <div id="scratchPadContainer" draggable="true">
+        <div> 
+  	    <core-toolbar flex tool> 
+		<div flex>{{scratchPadTitle}}</div>
+                <core-icon-button 
+                    icon="save"
+                    id="saveIcon"
+                    on-click="{{onSaveIconClick}}"
+                    > 
+                </core-icon-button>
+	    </core-toolbar>
+
+	    <div id="scratchPadContent"> 
               {{scratchPadContent}}
-	</div>
-    </div>
-    <!-- <core-ajax url="http://example.com/json" auto response="{{resp}}"></core-ajax> -->
-    <label for="scratchPad"> 
-        Enter scrap note
-    </label>
-    <textarea id="scratchPad" value="" on-keypress="{{scratchPadChanged}}"></textarea>
+	    </div>
+        </div>
+        <!-- <core-ajax url="http://example.com/json" 
+                     auto response="{{resp}}">
+             </core-ajax> 
+        -->
+        <label for="scratchPad"> 
+          Enter scrap note
+        </label>
+        <textarea id="scratchPad" value="" 
+              on-keypress="{{scratchPadChanged}}"
+              on-keyup="{{scratchPadChanged}}"
+              >
+        </textarea>
    </div>
+
   </template>
+
   <script>
       Polymer({
-         scratchPadTitle: 'Au-Polymer-Scratchpad',
-         scratchPadContent: 'This is an Au-Polymer Scratchpad. Enter content below to change the note here.',
-         ready: function(){ this.$.scratchPad.value= this.scratchPadContent; },
+
+         scratchPadTitle: 'Scratchpad',
+
+         scratchPadContent: 'This is a Scratchpad.'+
+                            'Enter content below to change the note here.',
+         ready: function(){ 
+                    this.$.scratchPad.value= this.scratchPadContent; 
+         },
+
          scratchPadChanged: function() { 
-					this.scratchPadContent = this.$.scratchPad.value; 
-				   }
+		    this.scratchPadContent = this.$.scratchPad.value; 
+	 },
+
+         onSaveIconClick: function(){ 
+                    if(this.scratchPadContent.trim()){
+                         alert('Scractchpad Content: \n'+ this.scratchPadContent);
+                    }else{
+                         alert("Nothing in sratch pad !! ");
+                    }
+         },
+         
 
       });
 
