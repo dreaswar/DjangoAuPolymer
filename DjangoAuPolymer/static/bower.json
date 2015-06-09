@@ -1,0 +1,32 @@
+{
+  "name": "DjangoAuPolymer",
+  "version": "0.0.0",
+  "description": "Polymer implementation of AuShadhaEMR",
+  "keywords": [
+    "Django",
+    "Polymer",
+    "AuShadha",
+    "EMR"
+  ],
+  "authors": [
+    "Dr. Easwar T.R"
+  ],
+  "license": "MIT",
+  "homepage": "http://aushadha.org",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "polymer": "^0.5",
+    "webcomponentsjs": "^0.5"
+  },
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.8.0",
+    "core-elements": "Polymer/core-elements#~0.5.5",
+    "paper-elements": "Polymer/paper-elements#~0.5.5"
+  }
+}
